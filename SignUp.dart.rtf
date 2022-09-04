@@ -1,0 +1,158 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red15\green112\blue1;\red255\green255\blue255;\red0\green0\blue0;
+\red0\green0\blue255;\red144\green1\blue18;\red19\green118\blue70;}
+{\*\expandedcolortbl;;\cssrgb\c0\c50196\c0;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;
+\cssrgb\c0\c0\c100000;\cssrgb\c63922\c8235\c8235;\cssrgb\c3529\c52549\c34510;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 // ignore_for_file: camel_case_types\cf0 \cb1 \strokec4 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 import\cf0 \strokec4  \cf6 \strokec6 'package:flutter/material.dart'\cf0 \strokec4 ;\cb1 \
+\cf5 \cb3 \strokec5 import\cf0 \strokec4  \cf6 \strokec6 'package:shared_preferences/shared_preferences.dart'\cf0 \strokec4 ;\cb1 \
+\
+\cf5 \cb3 \strokec5 import\cf0 \strokec4  \cf6 \strokec6 'Login.dart'\cf0 \strokec4 ;\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 \strokec2 // ignore: camel_case_types\cf0 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 class\cf0 \strokec4  SignUp_Preferences \cf5 \strokec5 extends\cf0 \strokec4  StatefulWidget \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf5 \strokec5 const\cf0 \strokec4  SignUp_Preferences(\{Key? key\}) : \cf5 \strokec5 super\cf0 \strokec4 (key: key);\cb1 \
+\
+\cb3   \cf5 \strokec5 @override\cf0 \cb1 \strokec4 \
+\cb3   State<SignUp_Preferences> createState() => _SignUp_PreferencesState();\cb1 \
+\cb3 \}\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 class\cf0 \strokec4  _SignUp_PreferencesState \cf5 \strokec5 extends\cf0 \strokec4  State<SignUp_Preferences> \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   TextEditingController name = TextEditingController();\cb1 \
+\cb3   TextEditingController email = TextEditingController();\cb1 \
+\cb3   TextEditingController password = TextEditingController();\cb1 \
+\cb3   String uname = \cf6 \strokec6 ""\cf0 \strokec4 ;\cb1 \
+\cb3   String uemail = \cf6 \strokec6 ""\cf0 \strokec4 ;\cb1 \
+\cb3   String upass = \cf6 \strokec6 ""\cf0 \strokec4 ;\cb1 \
+\cb3   \cf5 \strokec5 late\cf0 \strokec4  SharedPreferences prefs;\cb1 \
+\cb3   \cf5 \strokec5 @override\cf0 \cb1 \strokec4 \
+\cb3   Widget build(BuildContext context) \{\cb1 \
+\cb3     \cf5 \strokec5 return\cf0 \strokec4  Scaffold(\cb1 \
+\cb3       appBar: AppBar(\cb1 \
+\cb3         title: \cf5 \strokec5 const\cf0 \strokec4  Text(\cb1 \
+\cb3           \cf6 \strokec6 'SignUp Using Shared Preferences'\cf0 \strokec4 ,\cb1 \
+\cb3           style: TextStyle(fontSize: \cf7 \cb3 \strokec7 16\cf0 \cb3 \strokec4 ),\cb1 \
+\cb3         ),\cb1 \
+\cb3       ),\cb1 \
+\cb3       body: SingleChildScrollView(\cb1 \
+\cb3         child: Padding(\cb1 \
+\cb3           padding: \cf5 \strokec5 const\cf0 \strokec4  EdgeInsets.only(right: \cf7 \cb3 \strokec7 15.0\cf0 \cb3 \strokec4 , left: \cf7 \cb3 \strokec7 5.0\cf0 \cb3 \strokec4 ),\cb1 \
+\cb3           child: Column(\cb1 \
+\cb3             \cf2 \cb3 \strokec2 //mainAxisAlignment: MainAxisAlignment.center,\cf0 \cb1 \strokec4 \
+\cb3             children: [\cb1 \
+\cb3               \cf5 \strokec5 const\cf0 \strokec4  SizedBox(\cb1 \
+\cb3                 height: \cf7 \cb3 \strokec7 20\cf0 \cb3 \strokec4 ,\cb1 \
+\cb3               ),\cb1 \
+\cb3               \cf5 \strokec5 const\cf0 \strokec4  Text(\cb1 \
+\cb3                 \cf6 \strokec6 'Register'\cf0 \strokec4 ,\cb1 \
+\cb3                 style: TextStyle(\cb1 \
+\cb3                   fontSize: \cf7 \cb3 \strokec7 20\cf0 \cb3 \strokec4 ,\cb1 \
+\cb3                 ),\cb1 \
+\cb3               ),\cb1 \
+\cb3               \cf5 \strokec5 const\cf0 \strokec4  SizedBox(\cb1 \
+\cb3                 height: \cf7 \cb3 \strokec7 30\cf0 \cb3 \strokec4 ,\cb1 \
+\cb3               ),\cb1 \
+\cb3               TextField(\cb1 \
+\cb3                 controller: name,\cb1 \
+\cb3                 decoration: \cf5 \strokec5 const\cf0 \strokec4  InputDecoration(\cb1 \
+\cb3                   hintText: \cf6 \strokec6 'Enter Name'\cf0 \strokec4 ,\cb1 \
+\cb3                   icon: Icon(Icons.person),\cb1 \
+\cb3                 ),\cb1 \
+\cb3               ),\cb1 \
+\cb3               \cf5 \strokec5 const\cf0 \strokec4  SizedBox(\cb1 \
+\cb3                 height: \cf7 \cb3 \strokec7 15\cf0 \cb3 \strokec4 ,\cb1 \
+\cb3               ),\cb1 \
+\cb3               TextField(\cb1 \
+\cb3                 controller: email,\cb1 \
+\cb3                 decoration: \cf5 \strokec5 const\cf0 \strokec4  InputDecoration(\cb1 \
+\cb3                   hintText: \cf6 \strokec6 'Enter Email'\cf0 \strokec4 ,\cb1 \
+\cb3                   icon: Icon(Icons.mail),\cb1 \
+\cb3                 ),\cb1 \
+\cb3               ),\cb1 \
+\cb3               \cf5 \strokec5 const\cf0 \strokec4  SizedBox(\cb1 \
+\cb3                 height: \cf7 \cb3 \strokec7 15\cf0 \cb3 \strokec4 ,\cb1 \
+\cb3               ),\cb1 \
+\cb3               TextField(\cb1 \
+\cb3                 obscureText: \cf5 \strokec5 true\cf0 \strokec4 ,\cb1 \
+\cb3                 controller: password,\cb1 \
+\cb3                 decoration: \cf5 \strokec5 const\cf0 \strokec4  InputDecoration(\cb1 \
+\cb3                   hintText: \cf6 \strokec6 'Enter Password'\cf0 \strokec4 ,\cb1 \
+\cb3                   icon: Icon(Icons.security),\cb1 \
+\cb3                 ),\cb1 \
+\cb3               ),\cb1 \
+\cb3               \cf5 \strokec5 const\cf0 \strokec4  SizedBox(\cb1 \
+\cb3                 height: \cf7 \cb3 \strokec7 30\cf0 \cb3 \strokec4 ,\cb1 \
+\cb3               ),\cb1 \
+\cb3               ElevatedButton(\cb1 \
+\cb3                 onPressed: () \{\cb1 \
+\cb3                   saveDetails();\cb1 \
+\cb3                   print(\cf6 \strokec6 'Clicked'\cf0 \strokec4 );\cb1 \
+\cb3                   print(uname);\cb1 \
+\cb3                   print(uemail);\cb1 \
+\cb3                   print(upass);\cb1 \
+\cb3                 \},\cb1 \
+\cb3                 child: \cf5 \strokec5 const\cf0 \strokec4  Text(\cf6 \strokec6 'SignUp'\cf0 \strokec4 ),\cb1 \
+\cb3               ),\cb1 \
+\cb3               \cf5 \strokec5 const\cf0 \strokec4  SizedBox(\cb1 \
+\cb3                 height: \cf7 \cb3 \strokec7 15\cf0 \cb3 \strokec4 ,\cb1 \
+\cb3               ),\cb1 \
+\cb3               Text(uname),\cb1 \
+\cb3               Text(uemail),\cb1 \
+\cb3               Text(upass),\cb1 \
+\cb3               \cf5 \strokec5 const\cf0 \strokec4  Divider(),\cb1 \
+\cb3               \cf5 \strokec5 const\cf0 \strokec4  Text(\cb1 \
+\cb3                 \cf6 \strokec6 'Already Signed Up?'\cf0 \strokec4 ,\cb1 \
+\cb3                 style: TextStyle(\cb1 \
+\cb3                   color: Colors.grey,\cb1 \
+\cb3                 ),\cb1 \
+\cb3               ),\cb1 \
+\cb3               \cf5 \strokec5 const\cf0 \strokec4  SizedBox(\cb1 \
+\cb3                 height: \cf7 \cb3 \strokec7 10\cf0 \cb3 \strokec4 ,\cb1 \
+\cb3               ),\cb1 \
+\cb3               ElevatedButton(\cb1 \
+\cb3                 onPressed: () \{\cb1 \
+\cb3                   Navigator.push(\cb1 \
+\cb3                       context,\cb1 \
+\cb3                       MaterialPageRoute(\cb1 \
+\cb3                           builder: (BuildContext context) => \cf5 \strokec5 const\cf0 \strokec4  Login()));\cb1 \
+\cb3                 \},\cb1 \
+\cb3                 child: \cf5 \strokec5 const\cf0 \strokec4  Text(\cf6 \strokec6 'Login'\cf0 \strokec4 ),\cb1 \
+\cb3               ),\cb1 \
+\cb3             ],\cb1 \
+\cb3           ),\cb1 \
+\cb3         ),\cb1 \
+\cb3       ),\cb1 \
+\cb3     );\cb1 \
+\cb3   \}\cb1 \
+\
+\cb3   saveDetails() \cf5 \strokec5 async\cf0 \strokec4  \{\cb1 \
+\cb3     prefs = \cf5 \strokec5 await\cf0 \strokec4  SharedPreferences.getInstance();\cb1 \
+\cb3     \cf5 \strokec5 await\cf0 \strokec4  prefs.setString(\cf6 \strokec6 "username"\cf0 \strokec4 , name.text.toString());\cb1 \
+\cb3     \cf5 \strokec5 await\cf0 \strokec4  prefs.setString(\cf6 \strokec6 "useremail"\cf0 \strokec4 , email.text.toString());\cb1 \
+\cb3     \cf5 \strokec5 await\cf0 \strokec4  prefs.setString(\cf6 \strokec6 "userpass"\cf0 \strokec4 , password.text.toString());\cb1 \
+\cb3     setState(() \{\cb1 \
+\cb3       uname = \cf6 \strokec6 "Name Saved"\cf0 \strokec4 ;\cb1 \
+\cb3     \});\cb1 \
+\cb3     setState(() \{\cb1 \
+\cb3       uemail = \cf6 \strokec6 "Email Saved"\cf0 \strokec4 ;\cb1 \
+\cb3     \});\cb1 \
+\cb3     setState(() \{\cb1 \
+\cb3       upass = \cf6 \strokec6 "Password Saved"\cf0 \strokec4 ;\cb1 \
+\cb3     \});\cb1 \
+\cb3   \}\cb1 \
+\cb3 \}\cb1 \
+\
+}
